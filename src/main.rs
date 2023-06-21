@@ -28,5 +28,9 @@ fn main() {
         args::GitOperationType::Push => {
             operations::push(current_dir);
         },
+        args::GitOperationType::Status => {
+            operations::status(current_dir);
+        },
+        
     }
 }

@@ -15,7 +15,8 @@ pub enum GitOperationType {
     /// Adds all changes to staged (git add .) then commits them all with the message inside
     Commit(CommitArgs),
     /// Pushes all committed changes
-    Push
+    Push,
+    Status
 }
 
 #[derive(Debug, Args)]
