@@ -16,6 +16,7 @@ pub enum GitOperationType {
     Commit(CommitArgs),
     /// Pushes all committed changes
     Push,
+    /// Runs git status on all
     Status
 }
 
