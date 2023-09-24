@@ -21,11 +21,17 @@ pub fn commit(current_dir: PathBuf, message: String) {
 
 pub fn status(current_dir: PathBuf) {
     let (successes, errors) = recursive_command(current_dir, &mut Command::new("git").arg("status"));
-    println!("### recursive-git push ran {} times, successes: {successes} | errors: {errors}", successes + errors);
+    println!("### recursive-git status ran {} times, successes: {successes} | errors: {errors}", successes + errors);
     println!("");
 }
 
-fn recursive_command(path: PathBuf, command: &mut Command) -> (i32, i32) {
+pub fn hard_reset(current_dir: PathBuf) {
+    let (successes, errors) = recursive_command(current_dir, &mut Command::new("git").arg("reset").arg("--hard"));
+    println!("### recursive-git hard_reset ran {} times, successes: {successes} | errors: {errors}", successes + errors);
+    println!("");
+}
+
+pub fn recursive_command(path: PathBuf, command: &mut Command) -> (i32, i32) {
     let mut successes = 0;
     let mut errors = 0;
     let dir = match std::fs::read_dir(path) {

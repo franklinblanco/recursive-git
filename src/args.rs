@@ -17,7 +17,9 @@ pub enum GitOperationType {
     /// Pushes all committed changes
     Push,
     /// Runs git status on all
-    Status
+    Status,
+    /// Runs git reset --hard
+    HardReset,
 }
 
 #[derive(Debug, Args)]

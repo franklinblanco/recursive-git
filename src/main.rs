@@ -1,3 +1,4 @@
+#![feature(async_fn_in_trait)]
 use std::env::current_dir;
 
 use args::RecursiveGitArgs;
@@ -30,6 +31,9 @@ fn main() {
         },
         args::GitOperationType::Status => {
             operations::status(current_dir);
+        },
+        args::GitOperationType::HardReset => {
+            operations::hard_reset(current_dir)
         },
         
     }

@@ -1,6 +1,6 @@
 [package]
 name = "recursive-git"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Franklin E. Blanco"]
 description = "Git with recursiveness. Useful for running one git command on many repositories."
